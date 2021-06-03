@@ -1,0 +1,73 @@
+<mat-dialog-content>
+  <mat-card>
+
+    <mat-card-header>
+      <div mat-card-avatar ></div>
+      <mat-card-title>Registration Form For</mat-card-title>
+      <mat-card-subtitle>Covaxin Covishield Sputnik-V</mat-card-subtitle>
+    </mat-card-header>
+  
+    
+    
+<div>
+    <mat-form-field appearance="fill" >
+      <mat-label>Select your option (required)</mat-label>
+      <mat-select  required [(ngModel)]="covid.Id_proof" (change)="checkId()" name="Id_proof" id="Id_proof" >
+        <mat-option label="--select something --"></mat-option>
+        <mat-option value="Aadharcard">Aadhar Card</mat-option>
+        <mat-option value="drive">Driving License</mat-option>
+        <mat-option value="pancard">Pan Card</mat-option>
+      </mat-select>
+      
+    </mat-form-field>
+    
+</div>
+<div *ngIf="aadhar" >
+<mat-form-field appearance="fill">
+  <mat-label>Id_number</mat-label>
+  <input type="id" id="Id_number"  name="Id_number" matInput placeholder="Placeholder" [(ngModel)]="covid.Id_number"required minlength="12" maxlength="12">
+  
+</mat-form-field>
+    
+    </div>
+    <div *ngIf="drive" >
+      <mat-form-field appearance="fill">
+        <mat-label>Id_number</mat-label>
+        <input type="id" id="Id_number"  name="Id_number" matInput placeholder="Placeholder" [(ngModel)]="covid.Id_number"required minlength="11" maxlength="11">
+        
+      </mat-form-field>
+          
+          </div>
+          <div *ngIf="pancard" >
+            <mat-form-field appearance="fill">
+              <mat-label>Id_number</mat-label>
+              <input type="id" id="Id_number"  name="Id_number" matInput placeholder="Placeholder" [(ngModel)]="covid.Id_number"required minlength="10" maxlength="10">
+              
+            </mat-form-field>
+                
+                </div>
+
+    <div >
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input type="name" id="name" name="name" matInput placeholder="Placeholder" [(ngModel)]="covid.name"required>
+        
+      </mat-form-field>
+          
+          </div>
+
+          <div >
+            <mat-form-field appearance="fill">
+              <mat-label>D_O_B</mat-label>
+              <input type="date" id="D_O_B" name="D_O_B" matInput placeholder="Placeholder" [(ngModel)]="covid.D_O_B" required>
+              
+            </mat-form-field>
+                
+                </div>
+    
+
+   <mat-card-actions> <button mat-raised-button color="accent" (click)= onRegisterSubmit()> Register </button></mat-card-actions>
+  </mat-card>
+  
+</mat-dialog-content>
+
